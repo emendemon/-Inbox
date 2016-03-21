@@ -1,0 +1,31 @@
+mtpoint - last finger reported
+
+add mode to the debug_data struct (debug_data struct is now the most important)
+- Ian to figure out ni_fp1000_data struct - throw in all things that change on the FP-1000, touchpoints, etc.
+  - mode
+  - touch_status
+  - change app_data in ni_fp1000_ts.ko
+  - latency test
+
+- Common ni.h
+
+verify touchpoint index
+
+ni_device.c should be generic
+device tree should configure - pass in pointers for devices, pass in width/height, etc. 
+
+report data continously in apk
+
+verify force correction
+
+- scaling - scaled values at 2048
+- scaling - force at 4096
+- Keep capturing data in calibrate mode
+- Toggle debug output in driver
+- 
+
+- Touch Status Calculation - Need to define band of sensor output (plus and minus). 
+When sensors leave this band, it’s a touch event. When they return to the band 
+(a bigger band) the touch event ends and auto cal begins
+
+Major R&D efforts - Two touch with Force Correct (need to get Josh a phone for this)
